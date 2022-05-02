@@ -9,7 +9,7 @@ iva = input("¿El producto tiene IVA? S/N: ")
 if  iva == "S" or iva == "s":
     cantidad = int(input("Ingrese la cantidad del producto: "))
     subtotal = (valorUnitario*cantidad) + (cantidad*valorUnitario*0.19)
-    print("IVA incluido")
+    print("IVA incluído")
     lista = [subtotal]
     print(f"SUBTOTAL: {subtotal}")
     agregar = input("Faltan productos por agregar? S/N:")
@@ -20,7 +20,7 @@ if  iva == "S" or iva == "s":
             cantidad = int(input("Ingrese la cantidad del producto: "))
             subtotal = (valorUnitario * cantidad) + (cantidad * valorUnitario * 0.19)
             lista.append(subtotal)
-            print("IVA incluido")
+            print("IVA incluído")
             subtotal = 0
             for i in lista:
                 subtotal += i
@@ -54,7 +54,7 @@ elif iva == "N" or iva == "n":
             cantidad = int(input("Ingrese la cantidad del producto: "))
             subtotal = (valorUnitario * cantidad) + (cantidad * valorUnitario * 0.19)
             lista.append(subtotal)
-            print("IVA incluido")
+            print("IVA incluído")
             subtotal = 0
             for i in lista:
                 subtotal += i
@@ -73,8 +73,6 @@ elif iva == "N" or iva == "n":
             agregar = input("Faltan productos por agregar? S/N:")
         else:
             agregar == "N"
-print(lista)
-#for i in lista:
-   # subtotal += i
 
-print("El total es: %.2f" %(subtotal))
+
+print(f"TOTAL A COBRAR: {subtotal}")
