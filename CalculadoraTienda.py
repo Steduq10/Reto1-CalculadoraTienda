@@ -77,4 +77,4 @@ print(lista)
 #for i in lista:
    # subtotal += i
 
-print(f"El total es: {subtotal}")
+print("El total es: %.2f" %(subtotal))
