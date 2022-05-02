@@ -6,60 +6,75 @@ valorUnitario = int(input("Por favor, ingrese el valor unitario del producto (si
 
 iva = input("¿El producto tiene IVA? S/N: ")
 
-if  iva == "S":
+if  iva == "S" or iva == "s":
     cantidad = int(input("Ingrese la cantidad del producto: "))
     subtotal = (valorUnitario*cantidad) + (cantidad*valorUnitario*0.19)
-    print(f"SUBTOTAL: {subtotal} (IVA incluido)")
+    print("IVA incluido")
     lista = [subtotal]
-    print(lista)
+    print(f"SUBTOTAL: {subtotal}")
     agregar = input("Faltan productos por agregar? S/N:")
-    while agregar == "S":
+    while agregar == "S" or agregar == "s":
         valorUnitario = int(input("Por favor, ingrese el valor unitario del producto (sin IVA incluido): "))
         iva = input("¿El producto tiene IVA? S/N: ")
-        if iva == "S":
+        if iva == "S" or iva == "s":
             cantidad = int(input("Ingrese la cantidad del producto: "))
             subtotal = (valorUnitario * cantidad) + (cantidad * valorUnitario * 0.19)
             lista.append(subtotal)
-            print(f"SUBTOTAL: {subtotal} (IVA incluido)")
-            print(lista)
+            print("IVA incluido")
+            subtotal = 0
+            for i in lista:
+                subtotal += i
+            print(f"SUBTOTAL: {subtotal}")
             agregar = input("Faltan productos por agregar? S/N:")
-        elif iva == "N":
+        elif iva == "N" or iva == "n":
             cantidad = int(input("Ingrese la cantidad del producto: "))
             subtotal = (valorUnitario * cantidad)
             lista.append(subtotal)
-            print(f"SUBTOTAL: {subtotal} (IVA incluido)")
-            print(lista)
+            print("PRODUCTO SIN IVA")
+            subtotal = 0
+            for i in lista:
+                subtotal += i
+            print(f"SUBTOTAL: {subtotal}")
             agregar = input("Faltan productos por agregar? S/N:")
         else:
             agregar == "N"
 
 
-elif iva == "N":
+elif iva == "N" or iva == "n":
     cantidad = int(input("Ingrese la cantidad del producto: "))
     subtotal = (valorUnitario * cantidad)
     lista = [subtotal]
-    print(f"SUBTOTAL: {subtotal} (IVA incluido)")
-    print(lista)
+    print("PRODUCTO SIN IVA")
+    print(f"SUBTOTAL: {subtotal}")
     agregar = input("Faltan productos por agregar? S/N:")
-    while agregar == "S":
+    while agregar == "S" or agregar == "s":
         valorUnitario = int(input("Por favor, ingrese el valor unitario del producto (sin IVA incluido): "))
         iva = input("¿El producto tiene IVA? S/N: ")
-        if iva == "S":
+        if iva == "S" or iva == "s":
             cantidad = int(input("Ingrese la cantidad del producto: "))
             subtotal = (valorUnitario * cantidad) + (cantidad * valorUnitario * 0.19)
             lista.append(subtotal)
-            print(f"SUBTOTAL: {subtotal} (IVA incluido)")
-            print(lista)
+            print("IVA incluido")
+            subtotal = 0
+            for i in lista:
+                subtotal += i
+            print(f"SUBTOTAL: {subtotal}")
             agregar = input("Faltan productos por agregar? S/N:")
 
-        elif iva == "N":
+        elif iva == "N" or iva == "n":
             cantidad = int(input("Ingrese la cantidad del producto: "))
             subtotal = (valorUnitario * cantidad)
             lista.append(subtotal)
-            print(f"SUBTOTAL: {subtotal} (IVA incluido)")
-            print(lista)
+            print("PRODUCTO SIN IVA")
+            subtotal = 0
+            for i in lista:
+                subtotal += i
+            print(f"SUBTOTAL: {subtotal}")
             agregar = input("Faltan productos por agregar? S/N:")
         else:
             agregar == "N"
-
 print(lista)
+#for i in lista:
+   # subtotal += i
+
+print(f"El total es: {subtotal}")
